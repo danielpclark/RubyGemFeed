@@ -1,0 +1,27 @@
+#!/usr/bin/ruby
+# by Daniel P. Clark
+# webmaster@6ftdan.com
+# @6ftdan on Twitter
+
+require 'rubygems'
+require 'rubygemfeed'
+
+if ARGV.count == 0
+  RubyGemFeed::new50
+elsif ARGV.count == 1
+  if ARGV.include?('updated')
+    RubyGemFeed::updated50
+  elsif ARGV.include?('new')
+    RubyGemFeed::new50
+  elsif ARGV.include?('help') or ARGV.include?('--help')
+    puts "rubygemfeed usage:\n  rubygemfeed new\n  rubygemfeed updated\n  rubygemfeed <your gem here>\n"
+  else
+    RubyGemFeed::querygem(ARGV[0])
+  end
+else
+  ARGV.each do |search_item|
+    RubyGemFeed::querygem(search_item)
+  end
+end
+
+puts

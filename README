@@ -1,0 +1,11 @@
+RubyGemFeed
+by Daniel P. Clark
+License: MIT License
+
+Get the latest updates and newest releases from RubyGems.org in a nice readable console.  Also search any gems you might be interested for a little detail on it.
+
+On the command line type:
+
+    rubygemfeed new
+    rubygemfeed updated
+    rubygemfeed mygem
